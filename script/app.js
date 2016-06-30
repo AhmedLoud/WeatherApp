@@ -2,10 +2,6 @@ angular.module('Weather',['ngCookies'])
 
     .controller('weatherController',function($scope, $http,$location,$cookies){
         
-        $scope.count = 0;
-        $scope.myFunc = function() {
-            $scope.count++;
-        };
 
         $scope.city='';
         $scope.Math = Math;
@@ -84,11 +80,7 @@ angular.module('Weather',['ngCookies'])
             }
 
         };
-        /*//manage of the navigation
 
-         $scope.$watch(function(){
-         return $location.path();
-         })*/
 
 
         if($scope.myCookie!=null && cookieSearchTest==0)//if we have a cookie and we havn't searched for the weather of this cookie
