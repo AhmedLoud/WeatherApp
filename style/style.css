@@ -1,0 +1,38 @@
+.jumbotron
+{
+    background-color: #faebcc;
+}
+
+
+.list-group-item{
+    text-align: center;
+}
+footer
+{
+    background-color: #286090;
+}
+h1{
+    text-align: center;
+
+}
+#jumbotron2{
+
+    background-color:#2e6da4;
+}
+body{
+    background-color: #8c8c8c;
+}
+.nav-pills li {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.center-block
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#text-footer{
+    color:#122b40;
+    text-align: right;
+    margin-top: 5%;
+}
