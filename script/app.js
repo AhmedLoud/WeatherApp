@@ -1,7 +1,11 @@
 angular.module('Weather',['ngCookies'])
 
     .controller('weatherController',function($scope, $http,$location,$cookies){
-
+        
+        $scope.count = 0;
+        $scope.myFunc = function() {
+            $scope.count++;
+        };
 
         $scope.city='';
         $scope.Math = Math;
@@ -13,15 +17,24 @@ angular.module('Weather',['ngCookies'])
         $scope.units='°C';
         var cookieSearchTest=0;
 
+        httpSuccess=function (response) {
 
+            $scope.weather=response;
+        }
 
+        $scope.changeParam=function()
+        {
+            $scope.city=1;
+        };
+
+        console.log("ok");
 
 
         //manage cookies for previous research
         $scope.myCookie=$cookies.get('cookie');
         $scope.setCookie=function(val){
             $cookies.put('cookie',val);
-        }
+        };
 
         $scope.search=function(){
 
@@ -55,12 +68,9 @@ angular.module('Weather',['ngCookies'])
             $http.get(url).success(httpSuccess).error(function(){
                 alert('erreur');
             });
-        }
+        };
 
-        httpSuccess=function (response) {
 
-            $scope.weather=response;
-        }
 
         $scope.selectHome=function(test)
         {
@@ -73,7 +83,7 @@ angular.module('Weather',['ngCookies'])
                 $scope.HomeActivate=0;
             }
 
-        }
+        };
         /*//manage of the navigation
 
          $scope.$watch(function(){
@@ -90,7 +100,8 @@ angular.module('Weather',['ngCookies'])
             document.getElementById('languageId').value='en';
             $scope.search();
             cookieSearchTest=1;
-        }
+        };
+
 
 
 
